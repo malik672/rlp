@@ -1,7 +1,7 @@
 use crate::header::{Header, EMPTY_STRING_CODE, length_of_length};
 use bytes::{BufMut, Bytes, BytesMut};
 use core::{
-    alloc, borrow::Borrow, marker::{PhantomData, PhantomPinned}
+     borrow::Borrow, marker::{PhantomData, PhantomPinned}
 };
 
 use std::{borrow::Cow, rc::Rc, sync::Arc};
@@ -215,7 +215,6 @@ where
 {
     
     let h = list_header(list);
-    println!("payload_length={}, h.length={}", h.payload_length(), h.length());
     h.payload_length() + h.length()
 }
 

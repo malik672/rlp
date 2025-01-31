@@ -18,11 +18,6 @@ pub enum Error {
     ListLengthMismatch(usize, usize) = 9,
 }
 
-#[cfg(feature = "std")]
-impl std::error::Error for Error {}
-
-#[cfg(all(feature = "core-net", not(feature = "std")))]
-impl core::error::Error for Error {}
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
